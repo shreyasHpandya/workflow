@@ -6,7 +6,7 @@ Workflow
 This is the documentation of general guide lines, standards, recommendations and
 strategies used for the development of web projects. This also covers the code
 management, work environments setup, development/release cycle, deployment,
-packaging, documentation, django specific project structure, git version
+packaging, documenting, django specific project structure, git version
 control , git workflows and code hosting.
 
 
@@ -26,8 +26,8 @@ Python prerequisites:
 - pip
 
 
-Project Guide-Lines
--------------------
+Eclipse-Project Guide-Lines
+---------------------------
 
 - Create virtual environment for each project
 
@@ -77,12 +77,13 @@ code hosting
 ------------
 
 - fork all the third party projects that are going to be used.
-- host private code in bitbucket
-- all the used and created projects must exist in github or bitbucket
-  acting as master repo. and project must be on only one of them not
-  both of them because there is only one master repo
-- clone projects into local workspace for it to be available offline
-  (clone from our forked repo)
+- host private code in ``bitbucket``
+- all the used and created projects must exist in ``github`` or ``bitbucket``
+  acting as master repositories. and project must be on only one of them and not
+  in both of them because there is only one master repository. To maintain backup
+  of master repositories however, create ``git-mirror`` repository.
+- clone projects into local workspace for it to be available off-line
+  (clone from our forked repository)
 
 Documentation
 =============
@@ -101,7 +102,9 @@ start project
 collaborating
 -------------
 
-- create apt commit message
+- create apt commit message. commit message must be in proper format(line limit
+  80, `short description-blank line-long description` style)
+- long description must explain point wise, the rationale behind each change made.
 - code review before merging to mainline branch
 
 issue tracking
