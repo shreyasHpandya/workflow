@@ -21,6 +21,8 @@ Eclipse plugins used:
 
 Python prerequisites:
 
+- python>=2.6<3.0
+- Django==1.4
 - sphinx
 - virtualenv
 - pip
@@ -34,16 +36,31 @@ Eclipse-Project Guide-Lines
 Pydev project structure
 -----------------------
 
+Project structure is as follows.
+
 ::
     
     |--PydevProject
        |--docs
-       |--djangoproject
+       |--mydjangoproject
+       |  |--__init__.py
+       |  |--settings.py
+       |  |--urls.py
+       |  |--wsgi.py
+       |--myapp
        |--thirdpartymodulecustomized1    #included as git submodules 
        |--thirdpartyappcustomized1       #included as git submodules
        |--tests
        |--README.rst
        |--.gitignore
+       |--manage.py
+
+- all the apps are decoupled from Django-project. If possible try to make apps
+  generalized i.e usable in other projects. in later case maintain separate
+  project for app (see `django general purpose app structure`_)
+- manage.py is outside the Django project(default for Django>=1.4)
+
+.. TODO: where do static files and Templates fit in this structure
 
 .. Note::
     only the third party modules that are to be customised are included in project.
@@ -61,6 +78,7 @@ django general purpose app structure
        |--docs
        |--app
        |--README.rst
+       |--manage.py
        |--.gitignore
 
 ..   TODO: python packaging guide 
@@ -113,3 +131,12 @@ issue tracking
 - use github/bitbucket issue tracking
 - reproduce bug by writing tests while fixing the issue
 
+Project Packaging
+=================
+
+.. TODO: this
+
+Project Deployment
+==================
+
+.. TODO: how to deploy in production
